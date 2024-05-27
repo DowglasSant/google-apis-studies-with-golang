@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	inputFilePath := filepath.Join("..", "data", "input.txt")
+	inputFilePath := filepath.Join("data", "input.txt")
 
 	translatedText, err := translation.TranslateText(inputFilePath)
 	if err != nil {

@@ -12,7 +12,7 @@ import (
 )
 
 func TranslateText(filePath string) ([]byte, error) {
-	os.Setenv("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Example\\golang-studies-69d707a440e3.json")
+	os.Setenv("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Users\\Example\\Directory\\golang-studies-69d707a440e3.json")
 
 	text, err := os.ReadFile(filePath)
 	if err != nil {
@@ -44,7 +44,7 @@ func TranslateText(filePath string) ([]byte, error) {
 		text = []byte(translations[0].Text)
 
 		outputFileName := "traduzido.txt"
-		outputFilePath := filepath.Join("..", "data", outputFileName)
+		outputFilePath := filepath.Join("data", outputFileName)
 		outputFile, err := os.Create(outputFilePath)
 		if err != nil {
 			return nil, err

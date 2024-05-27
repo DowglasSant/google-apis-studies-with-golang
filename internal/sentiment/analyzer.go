@@ -33,7 +33,15 @@ func AnalyzeSentiment(text []byte) {
 	sentimentScore := mainSentiment.GetScore()
 	sentimentMagnitude := mainSentiment.GetMagnitude()
 
+	sentimentDescription, magnitudeDescription := getScoreAndGetMagnitude(sentimentScore, sentimentMagnitude)
+
+	log.Printf("Sentimento principal do texto: %s, Magnitude: %s\n", sentimentDescription, magnitudeDescription)
+}
+
+func getScoreAndGetMagnitude(sentimentScore, sentimentMagnitude float32) (string, string) {
 	var sentimentDescription string
+	var magnitudeDescription string
+
 	switch {
 	case sentimentScore > -1.0 && sentimentScore < -0.5:
 		sentimentDescription = "muito negativo"
@@ -47,7 +55,6 @@ func AnalyzeSentiment(text []byte) {
 		sentimentDescription = "muito positivo"
 	}
 
-	var magnitudeDescription string
 	switch {
 	case sentimentMagnitude <= 1.0:
 		magnitudeDescription = "muito fraca"
@@ -61,5 +68,5 @@ func AnalyzeSentiment(text []byte) {
 		magnitudeDescription = "muito forte"
 	}
 
-	log.Printf("Sentimento principal do texto: %s, Magnitude: %s\n", sentimentDescription, magnitudeDescription)
+	return sentimentDescription, magnitudeDescription
 }

@@ -1,6 +1,6 @@
 # Projeto de Tradução e Análise de Sentimento
 
-![Go](https://img.shields.io/badge/Go-1.16-blue)
+![Go](https://img.shields.io/badge/Go-1.23-blue)
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Natural%20Language%20API-yellow)
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Translation%20API-yellow)
 
